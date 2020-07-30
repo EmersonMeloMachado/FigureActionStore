@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="FigureActionStore.App">
+    <Application.Resources>
+        <Color x:Key="Primary">#010101</Color>
+        <Color x:Key="Secundary">#2E2F33</Color>
+        <Color x:Key="Tertiary">#BF4A45</Color>
+        <Color x:Key="Fourth">#DE7672</Color>        
+        <Color x:Key="White">#FFFFFF</Color>
+
+        <OnPlatform x:Key="Font11" x:TypeArguments="x:Double">
+            <On Platform="Android" Value="11"/>
+            <On Platform="iOS" Value="13"/>
+        </OnPlatform>
+        <OnPlatform x:Key="Font14" x:TypeArguments="x:Double">
+            <On Platform="Android" Value="14"/>
+            <On Platform="iOS" Value="17"/>
+        </OnPlatform>
+        <OnPlatform x:Key="Font16" x:TypeArguments="x:Double">
+            <On Platform="Android" Value="16"/>
+            <On Platform="iOS" Value="19"/>
+        </OnPlatform>
+        <OnPlatform x:Key="Font18" x:TypeArguments="x:Double">
+            <On Platform="Android" Value="18"/>
+            <On Platform="iOS" Value="21"/>
+        </OnPlatform>
+        <OnPlatform x:Key="Font24" x:TypeArguments="x:Double">
+            <On Platform="Android" Value="24"/>
+            <On Platform="iOS" Value="27"/>
+        </OnPlatform>
+        <OnPlatform x:Key="Font48" x:TypeArguments="x:Double">
+            <On Platform="Android" Value="48"/>
+            <On Platform="iOS" Value="50"/>
+        </OnPlatform>
+    </Application.Resources>
+</Application>

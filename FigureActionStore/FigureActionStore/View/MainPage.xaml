@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="FigureActionStore.View.MainPage"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="True"
+             BackgroundColor="{StaticResource Primary}"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid RowDefinitions="200,*,200"
+          RowSpacing="0"
+          Padding="0,50,0,0">
+
+        <Label Grid.Row="0"
+               Margin="37,0,0,0">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Figure&#10;" 
+                          TextColor="{StaticResource White}"
+                          FontSize="{StaticResource Font48}"
+                          FontAttributes="Bold"/>
+                    <Span Text="Action&#10;" 
+                          TextColor="{StaticResource White}"
+                          FontSize="{StaticResource Font48}"
+                          FontAttributes="Bold"/>
+                    <Span Text="Store" 
+                          TextColor="{StaticResource White}"
+                          FontSize="{StaticResource Font48}"
+                          FontAttributes="Bold"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+        <Image Grid.RowSpan="3"
+               TranslationY="20"
+               Source="godofwar.png"
+               Aspect="AspectFit"
+               HorizontalOptions="End"/>
+
+        <Button Grid.Row="2" 
+                Text="Go Store"
+                Margin="37,0,37,70"
+                HeightRequest="65"
+                WidthRequest="300"
+                VerticalOptions="Center"
+                TextColor="{StaticResource White}"
+                BackgroundColor="{StaticResource Tertiary}"
+                CornerRadius="18"
+                Command="{Binding HomePageCommand}"/>
+    </Grid>
+
+</ContentPage>

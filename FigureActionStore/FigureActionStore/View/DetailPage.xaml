@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="FigureActionStore.View.DetailPage"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="True"
+             BackgroundColor="{StaticResource Primary}"
+             xmlns:fonticons="clr-namespace:FigureActionStore.Resources.Fonts"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions">
+    
+    <Grid RowDefinitions="80,auto"
+          RowSpacing="0">
+
+        <StackLayout Grid.Row="0" 
+                     Orientation="Horizontal" 
+                     Margin="30,20,30,0"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="Start">
+            <StackLayout HeightRequest="100"
+                         WidthRequest="100"
+                         HorizontalOptions="StartAndExpand"
+                         VerticalOptions="FillAndExpand">
+                <Label Text="{x:Static fonticons:FontIcons.arrow_left}"
+                   FontFamily="FontAwesomeBold"
+                   HorizontalTextAlignment="Start"
+                   VerticalTextAlignment="Center"
+                   HorizontalOptions="StartAndExpand"
+                   VerticalOptions="FillAndExpand"
+                   FontSize="{StaticResource Font11}"
+                   TextColor="{StaticResource White}"/>
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding PopHomePageCommand}"/>
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+
+            <Label Text="{x:Static fonticons:FontIcons.heart}"
+                   FontFamily="FontAwesomeBold"
+                   HorizontalTextAlignment="Start"
+                   VerticalTextAlignment="Center"
+                   HorizontalOptions="EndAndExpand"
+                   FontSize="{StaticResource Font11}"
+                   TextColor="{StaticResource Fourth}"/>
+
+        </StackLayout>
+
+        <Grid Grid.Row="1" 
+              RowDefinitions="200,*,400"
+              RowSpacing="0"
+              Padding="0,50,0,0">
+
+            <Label Grid.Row="0"
+                   Text="{Binding figure.name}"
+                   FontAttributes="Bold"
+                   TextColor="{StaticResource White}"
+                   FontSize="{StaticResource Font24}"
+                   Margin="37,0,0,0"/>
+
+            <Frame Grid.Row="2" 
+                   Padding="0"
+                   CornerRadius="18"
+                   TranslationY="50"
+                   BackgroundColor="{StaticResource Secundary}"
+                   HeightRequest="400"
+                   WidthRequest="375">
+
+                <Label HorizontalTextAlignment="Start"
+                       VerticalTextAlignment="Start"
+                       HorizontalOptions="Start"
+                       Margin="31,20,0,0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="About&#10;&#10;" 
+                                  TextColor="{StaticResource White}"
+                                  FontSize="{StaticResource Font18}"
+                                  FontAttributes="Bold"/>
+                            <Span Text="{Binding figure.figureDetail.detailDescription}" 
+                                  TextColor="{StaticResource White}"
+                                  FontSize="{StaticResource Font14}"/>
+                            <Span Text="&#10;&#10;&#10;" 
+                                  TextColor="{StaticResource White}"
+                                  FontSize="{StaticResource Font14}"/>
+                            <Span Text="{Binding figure.figureDetail.detail}" 
+                                  TextColor="{StaticResource White}"
+                                  FontSize="{StaticResource Font14}"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+            </Frame>
+            
+            <Image Grid.RowSpan="3"
+                   TranslationY="20"
+                   Source="{Binding figure.figureDetail.ImageDetail}"
+                   Aspect="AspectFill"
+                   TranslationX="{Binding figure.figureDetail.translationX}"
+                   HorizontalOptions="End"
+                   sharedTransitions:Transition.Name="SelectedImageFigure"/>
+
+        </Grid>
+
+    </Grid>
+</ContentPage>
