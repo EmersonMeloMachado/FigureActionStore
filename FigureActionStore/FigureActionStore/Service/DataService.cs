@@ -1,5 +1,6 @@
 ﻿using FigureActionStore.Model;
 using System.Collections.ObjectModel;
+using Xamarin.Forms;
 
 namespace FigureActionStore.Service
 {
@@ -13,10 +14,10 @@ namespace FigureActionStore.Service
                 {
                     Id = 1,
                     ImageFigure = "metalgearsolid.png",
-                    name = "Naked Snake\n",
+                    name = Device.RuntimePlatform == Device.Android ?  "Naked Snake\n" : "\n\n\nNaked Snake\n",
                     type = "Game",
                     value="R$ 178",                    
-                    description ="Metal Gear Solid\n\n\n",
+                    description = Device.RuntimePlatform == Device.Android ?  "Metal Gear Solid\n\n\n" : "Metal Gear Solid\n",
                     figureDetail =
                     {
                         ImageDetail = "NakedSnake.png",

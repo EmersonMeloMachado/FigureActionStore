@@ -93,7 +93,8 @@
         <Frame Grid.Row="2" 
                HeightRequest="615"
                VerticalOptions="Start"
-               TranslationY="30"
+               HasShadow="False"
+               TranslationY="{OnPlatform Android='30',iOS='80'}"
                BackgroundColor="{StaticResource Secundary}" 
                CornerRadius="40"
                Padding="30,0">
@@ -111,13 +112,14 @@
                         SelectionMode="None"
                         ItemsSource="{Binding Category}">
                         <CollectionView.ItemsLayout>
-                            <LinearItemsLayout ItemSpacing="40" Orientation="Horizontal"/>
+                            <LinearItemsLayout ItemSpacing="{OnPlatform Android='40',iOS='35'}" Orientation="Horizontal"/>
                         </CollectionView.ItemsLayout>
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <Frame CornerRadius="18" 
+                                <Frame CornerRadius="{OnPlatform Android='18',iOS='12'}" 
                                     HeightRequest="24" 
                                     WidthRequest="71"
+                                    HasShadow="False"
                                     HorizontalOptions="Center"
                                     VerticalOptions="Center"
                                     BackgroundColor="{Binding backgroundColor}"

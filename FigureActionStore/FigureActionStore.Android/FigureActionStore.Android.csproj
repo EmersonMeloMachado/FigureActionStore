@@ -16,7 +16,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidUseAapt2>true</AndroidUseAapt2>
@@ -93,7 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FigureActionStore\FigureActionStore.csproj">
-      <Project>{37551A03-1C52-4C8D-969B-7D518FCC9B20}</Project>
+      <Project>{015C1EB0-5BCB-4CDB-BF5B-CA77C4B0AF6F}</Project>
       <Name>FigureActionStore</Name>
     </ProjectReference>
   </ItemGroup>
